@@ -1,0 +1,27 @@
+#cabezal {
+    background-color: brown !important;
+}
+
+#inicio {
+    background-color: rgb(236, 236, 236) !important;
+    color: rgb(0, 0, 0) !important;
+}
+
+#imagen-inicio {
+    width: 100% !important;
+    height: 45rem !important;
+}
+
+.fixed-img {
+  height: 200px;         /* Alto fijo para todas las imágenes */
+  object-fit: cover;     /* Recorta la imagen sin deformarla */
+}
+
+.col {
+  min-width: 250px; /* Cada columna nunca será más angosta que esto */
+}
+
+/* 
+#img-modal {
+    max-height: auto;
+} */
