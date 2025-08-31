@@ -27,6 +27,18 @@
       object-fit: cover;
     }
 
+    .card {
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+    }
+
+    .card:hover {
+      transform: translateY(-8px);
+      /* se levanta */
+      box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2);
+      /* sombra más fuerte */
+    }
+
+
     @media (min-width: 992px) {
       .aside-sticky {
         position: sticky;
@@ -42,78 +54,95 @@
   <a href="#noticias" class="visually-hidden-focusable btn btn-light ms-2 mt-2">Saltar al contenido principal</a>
 
   <!-- HEADER -->
-  <header id="cabezal" class="bg-primary text-white">
-    <nav class="navbar navbar-expand-lg navbar-dark container" aria-label="Navegación principal">
-      <a class="navbar-brand" href="#">Level - Up</a>
+  <header id="cabezal" class="text-white text-center d-flex flex-column justify-content-between position-relative"
+    style="background: url('https://img1.wallspic.com/crops/4/4/3/8/2/128344/128344-manana-sica-paisaje_natural-luz-naturaleza-3840x2160.jpg') no-repeat center center / cover; min-height: 60vh;">
+
+
+    <!-- Overlay semitransparente -->
+    <div class="bg-dark bg-opacity-50 w-100 h-100 position-absolute top-0 start-0"></div>
+
+    <!-- NAV -->
+    <nav class="navbar navbar-expand-lg navbar-dark container position-relative" aria-label="Navegación principal">
+      <img src="https://cdn.dribbble.com/userupload/25331627/file/original-6d94687ee057e04de1c89504c65c773b.png"
+        alt="Logo Level-Up" style="max-height: 80px;">
+      <a class="navbar-brand fw-bold fs-3" href="../index.html">Level - Up</a>
       <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#menuPrincipal"
-        aria-controls="menuPrincipal" aria-expanded="false" aria-label="Mostrar menú">
+        aria-controls="menuPrincipal" aria-expanded="false" aria-label="Mostrar menú de navegación">
         <span class="navbar-toggler-icon"></span>
       </button>
       <div class="collapse navbar-collapse" id="menuPrincipal">
         <ul class="navbar-nav ms-auto">
-          <li class="nav-item">
-            <a class="nav-link" href="../index.html">Inicio</a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link active" href="#noticias" aria-current="page">Noticias</a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link" href="#productos">Productos</a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link" href="#comunidad">Comunidad</a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link" href="#foro">Foro y Ayuda</a>
-          </li>
+          <li class="nav-item"><a class="nav-link" href="../index.html">Inicio</a></li>
+          <li class="nav-item"><a class="nav-link active" href="#noticias" aria-current="page">Noticias</a></li>
+          <li class="nav-item"><a class="nav-link" href="./productos.html">Productos</a></li>
+          <li class="nav-item"><a class="nav-link" href="./comunidad.html">Comunidad</a></li>
+          <li class="nav-item"><a class="nav-link" href="./foro.html">Foro y Ayuda</a></li>
         </ul>
       </div>
     </nav>
+
+    <!-- Título central -->
+    <div class="container position-relative my-auto">
+      <h1 class="display-4 fw-bold">Noticias Level-Up</h1>
+      <p class="lead">Apartado de las ultimas noticias del mundo del gaming.</p>
+      <p class="card-text"><small>Ultima actualizacion hace 14 h...</small></p>
+    </div>
   </header>
 
   <!-- CONTENEDOR PRINCIPAL -->
-  <main id="noticias" class="flex-grow-1 py-5 bg-light">
-    <div class="container">
+  <main id="noticias" class="flex-grow-1 py-5 position-relative text-white"
+    style="background-color: rgb(34, 34, 34); min-height: 100vh;">
+
+    <!-- Overlay semitransparente -->
+    <div class="bg-dark bg-opacity-50 w-100 h-100 position-absolute top-0 start-0"></div>
+
+    <!-- Contenido -->
+    <div class="container position-relative">
       <div class="row g-4">
         <!-- Noticias -->
         <section class="col-12 col-lg-8">
           <h1 class="h3 mb-4 text-center">Últimas noticias</h1>
-
           <div class="row row-cols-1 row-cols-sm-2 g-4">
             <!-- Card 1 -->
-            <div class="col" id="notice-nba2k">
+            <div class="col" id="notice-lego">
               <article class="card h-100 shadow-sm" aria-labelledby="n1-title">
-                <img src="https://i.redd.it/vc3sodxugocf1.jpeg" class="card-img-top" alt="Arte promocional de NBA2K26">
+                <img
+                  src="https://cdn1.epicgames.com/spt-assets/358ef3b999694addb83164bf077e8af4/lego-voyagers-1n5tk.jpg"
+                  class="card-img-top" alt="Arte promocional de LEGO Voyagers">
                 <div class="card-body d-flex flex-column">
-                  <h2 id="n1-title" class="card-title h5">NBA2K26 revela nuevas mecánicas</h2>
-                  <p class="card-text flex-grow-1">2K muestra cambios en físicas y tiros para el modo competitivo.</p>
-                  <small class="d-block text-muted">Hace 2 h</small>
+                  <h2 id="n1-title" class="card-title h5">Proximo lanzamiento de LEGO</h2>
+                  <p class="card-text flex-grow-1">LEGO Voyagers, embarcados en una misión para encontrar una nave
+                    perdida, sin diálogos ni tutoriales, fomentando la exploración colaborativa..</p>
+                  <small class="d-block text-muted">Hace 4 dias</small>
                 </div>
               </article>
             </div>
 
             <!-- Card 2 -->
-            <div class="col" id="notice-gtavi">
+            <div class="col" id="notice-ubisoft">
               <article class="card h-100 shadow-sm" aria-labelledby="n2-title">
-                <img src="https://derechadiario.com.ar/filesedc/uploads/image/post/gta-6-vice-city_1200_800.webp"
+                <img
+                  src="https://staticctf.ubisoft.com/J3yJr34U2pZ2Ieem48Dwy9uqj5PNUQTn/7gMPT0oWCpy5kakdVu4DSp/5f23c7012a4ce7cee1bfc1278ce04032/Chroma_Thumbnail.png"
                   class="card-img-top" alt="Captura nocturna de ciudad al estilo GTA VI">
                 <div class="card-body d-flex flex-column">
-                  <h2 id="n2-title" class="card-title h5">GTA VI: detalles de su mapa</h2>
-                  <p class="card-text flex-grow-1">Filtran barrios, rutas y actividades dentro de la nueva ciudad.</p>
+                  <h2 id="n2-title" class="card-title h5">Ubisoft Chroma</h2>
+                  <p class="card-text flex-grow-1">Durante la Game Accessibility Conference, Ubisoft anunció el
+                    lanzamiento de Chroma, un simulador de daltonismo en tiempo real diseñado para ayudar a los
+                    desarrolladores a crear juegos más inclusivos.</p>
                   <small class="d-block text-muted">Hace 4 h</small>
                 </div>
               </article>
             </div>
 
             <!-- Card 3 -->
-            <div class="col" id="notice-switch">
+            <div class="col" id="notice-steam">
               <article class="card h-100 shadow-sm" aria-labelledby="n3-title">
-                <img
-                  src="https://media.es.wired.com/photos/67890fcf8803b47ac6879177/16:9/w_2560%2Cc_limit/Nintendo_Lead.jpg"
-                  class="card-img-top" alt="Consola Nintendo Switch 2 sobre una mesa">
+                <img src="https://cdn.akamai.steamstatic.com/store/home/store_home_share.jpg" class="card-img-top"
+                  alt="Consola Nintendo Switch 2 sobre una mesa">
                 <div class="card-body d-flex flex-column">
-                  <h2 id="n3-title" class="card-title h5">Switch 2: primeras impresiones</h2>
-                  <p class="card-text flex-grow-1">Mayor rendimiento portátil y dock con mejoras de latencia.</p>
+                  <h2 id="n3-title" class="card-title h5">Steam y la accesibilidad</h2>
+                  <p class="card-text flex-grow-1">A partir de 2025, Steam especificará todas las opciones de
+                    accesibilidad disponibles en los videojuegos.</p>
                   <small class="d-block text-muted">Hace 2 días</small>
                 </div>
               </article>
@@ -133,15 +162,18 @@
             </div>
 
             <!-- Card 5 -->
-            <div class="col" id="notice-indies">
+            <div class="col" id="notice-ea">
               <article class="card h-100 shadow-sm" aria-labelledby="n5-title">
                 <img
-                  src="https://gaming-cdn.com/images/news/articles/7273/cover/los-juegos-indie-que-mas-me-han-marcado-cover668e7d9c1db0f.jpg"
+                  src="https://media.contentapi.ea.com/content/dam/eacom/images/2019/10/ea-featured-image-generic-brand-logo.png.adapt.crop191x100.1200w.png"
                   class="card-img-top" alt="Arte minimalista de juegos indie">
                 <div class="card-body d-flex flex-column">
-                  <h2 id="n5-title" class="card-title h5">Indie del mes sorprende</h2>
-                  <p class="card-text flex-grow-1">Una aventura narrativa lidera reseñas por su originalidad.</p>
-                 <small class="d-block text-muted">Hace 3 días</small>
+                  <h2 id="n5-title" class="card-title h5">EA libera patentes de accesibilidad</h2>
+                  <p class="card-text flex-grow-1">EA ha liberado 23 patentes de tecnología de accesibilidad en
+                    videojuegos como open-source, permitiendo que cualquier videojuego pueda incorporar estas
+                    herramientas durante su desarrollo, ayudando a que jugadores con discapacidad disfruten de dichos
+                    juegos.</p>
+                  <small class="d-block text-muted">Hace 3 días</small>
                 </div>
               </article>
             </div>
@@ -168,7 +200,8 @@
                   class="card-img-top" alt="Captura de nueva actualizacion de Minecraft">
                 <div class="card-body d-flex flex-column">
                   <h2 id="n6-title" class="card-title h5">Nuevo R6 Siege : X</h2>
-                  <p class="card-text flex-grow-1">Domina el arte de la destrucción y del uso de dispositivos en Tom Clancy's Rainbow Six Siege X...</p>
+                  <p class="card-text flex-grow-1">Domina el arte de la destrucción y del uso de dispositivos en Tom
+                    Clancy's Rainbow Six Siege X...</p>
                   <small class="d-block text-muted">Hace 2 h</small>
                 </div>
               </article>
@@ -182,7 +215,8 @@
                   class="card-img-top" alt="Captura de nueva actualizacion de Minecraft">
                 <div class="card-body d-flex flex-column">
                   <h2 id="n6-title" class="card-title h5">Oferta de Dualsense PS5</h2>
-                  <p class="card-text flex-grow-1">El mando de la consola PS5 recibe una ola de ofertas imperdibles!!..</p>
+                  <p class="card-text flex-grow-1">El mando de la consola PS5 recibe una ola de ofertas imperdibles!!..
+                  </p>
                   <small class="d-block text-muted">Hace 2 h</small>
                 </div>
               </article>
@@ -190,18 +224,16 @@
           </div>
         </section>
 
-        <!-- Aside con carrusel tipo scroll -->
+        <!-- Carrusel de noticias -->
         <aside class="col-12 col-lg-4">
           <div class="aside-sticky">
             <h2 id="titularesHeading" class="h4 mb-3 text-center text-lg-start">Titulares destacados</h2>
-
-            <!-- Scroll vertical accesible: role="feed" -->
             <div class="list-group overflow-auto" style="max-height: 520px;" role="feed"
               aria-labelledby="titularesHeading" tabindex="0">
-              <a href="#notice-nba2k" class="list-group-item list-group-item-action" role="article" aria-posinset="1"
+              <a href="#notice-lego" class="list-group-item list-group-item-action" role="article" aria-posinset="1"
                 aria-setsize="8">
-                Take-Two Interactive revela nuevas cosas del nuevo NBA2K
-                <small class="d-block text-muted">Hace 2 h</small>
+                Nuevo lanzamiento de LEGO!
+                <small class="d-block text-muted">Hace 4 dias</small>
               </a>
               <a href="#notice-mandoPS5" class="list-group-item list-group-item-action" role="article" aria-posinset="2"
                 aria-setsize="8">
@@ -218,15 +250,15 @@
                 Nueva update de Minecraft Java
                 <small class="d-block text-muted">Ayer</small>
               </a>
-              <a href="#notice-gtavi" class="list-group-item list-group-item-action" role="article" aria-posinset="5"
+              <a href="#notice-ubisoft" class="list-group-item list-group-item-action" role="article" aria-posinset="5"
                 aria-setsize="8">
-                Imagenes nuevas sobre el proximo GTA
+                Ubisoft anunció el lanzamiento de Chroma
                 <small class="d-block text-muted">2 días</small>
               </a>
-              <a href="#" class="list-group-item list-group-item-action" role="article" aria-posinset="6"
+              <a href="#notice-ea" class="list-group-item list-group-item-action" role="article" aria-posinset="6"
                 aria-setsize="8">
-                Benchmarks confirman mejora en Switch 2
-                <small class="d-block text-muted">2 días</small>
+                EA libera patentes de accesibilidad
+                <small class="d-block text-muted">3 días</small>
               </a>
               <a href="#notice-r6" class="list-group-item list-group-item-action" role="article" aria-posinset="7"
                 aria-setsize="8">
@@ -246,14 +278,51 @@
     </div>
   </main>
 
+
   <!-- FOOTER -->
-  <footer class="bg-dark text-white text-center py-3 mt-auto">
+  <footer class="bg-dark text-light pt-5 pb-3 mt-5">
     <div class="container">
-      <p class="mb-0">&copy; 2025 Level-Up. Todos los derechos reservados.</p>
+      <div class="row">
+
+        <!-- Logo - Texto -->
+        <div class="col-md-4 mb-4">
+          <img src="https://cdn.dribbble.com/userupload/25331627/file/original-6d94687ee057e04de1c89504c65c773b.png"
+            alt="Logo Level-Up" style="max-height: 80px;">
+          <p class="small mt-2">
+            © 2025 Level-Up. Todos los derechos reservados.
+          </p>
+          <div class="d-flex gap-3">
+            <a href="#" class="text-light" aria-label="Facebook"><i class="bi bi-facebook fs-4"></i></a>
+            <a href="#" class="text-light" aria-label="Twitter"><i class="bi bi-twitter fs-4"></i></a>
+            <a href="#" class="text-light" aria-label="LinkedIn"><i class="bi bi-linkedin fs-4"></i></a>
+            <a href="#" class="text-light" aria-label="Youtube"><i class="bi bi-youtube fs-4"></i></a>
+          </div>
+        </div>
+
+        <!-- Links -->
+        <div class="col-md-4 mb-4">
+          <h5 class="fw-bold">Enlaces rápidos</h5>
+          <ul class="list-unstyled">
+            <li><a href="../index.html" class="text-light text-decoration-none">Inicio</a></li>
+            <li><a href="./noticias.html" class="text-light text-decoration-none">Noticias</a></li>
+            <li><a href="./productos.html" class="text-light text-decoration-none">Productos</a></li>
+            <li><a href="./foro.html" class="text-light text-decoration-none">Foro y Ayuda</a></li>
+          </ul>
+        </div>
+
+        <!-- Contacto -->
+        <div class="col-md-4 mb-4">
+          <h5 class="fw-bold">Contacto</h5>
+          <p class="mb-1">Teléfono: <a href="#" class="text-light text-decoration-none">45548970</a></p>
+          <p class="mb-1">Celular: <a href="#" class="text-light text-decoration-none">099240021</a></p>
+          <p class="mb-0">Email: <a href="#" class="text-light text-decoration-none">levelupuy@gmail.com</a>
+          </p>
+        </div>
+      </div>
     </div>
   </footer>
 
-  <!-- Bootstrap JS -->
+  <!-- --------------------------------------------------------------------- "Backend" ---------------------------------------------------------------------------------------------- -->
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
 </body>
 
